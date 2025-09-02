@@ -358,7 +358,7 @@ describe('CandlesService', () => {
       mockCandleModel.findByIdAndUpdate.mockReturnValue({
         exec: jest.fn().mockResolvedValue(null),
       });
-
+      // test updateStock with invalid ObjectId
       await expect(service.updateStock(candleId, quantity)).rejects.toThrow(NotFoundException);
       await expect(service.updateStock(candleId, quantity)).rejects.toThrow('Candle not found');
     });
